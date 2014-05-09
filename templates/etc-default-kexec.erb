@@ -1,0 +1,21 @@
+# Managed by Puppet
+
+# Defaults for kexec initscript
+# sourced by /etc/init.d/kexec and /etc/init.d/kexec-load
+
+# Load a kexec kernel (true/false)
+<% if @has_igb == 'true' and @lsbdistcodename == 'precise' -%>
+LOAD_KEXEC=false
+<% else -%>
+LOAD_KEXEC=true
+<% end -%>
+
+# Kernel and initrd image
+KERNEL_IMAGE="/vmlinuz"
+INITRD="/initrd.img"
+
+# If empty, use current /proc/cmdline
+APPEND=""
+
+# Load the default kernel from grub config (true/false)
+USE_GRUB_CONFIG=true
