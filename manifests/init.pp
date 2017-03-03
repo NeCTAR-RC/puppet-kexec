@@ -10,6 +10,6 @@ class kexec {
     group   => root,
     mode    => '0644',
     content => template('kexec/etc-default-kexec.erb'),
-    require => package['kexec-tools'],
+    require => Package['kexec-tools'],
   }
 }
